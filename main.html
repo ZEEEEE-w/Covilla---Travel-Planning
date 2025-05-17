@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVILLA</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    
+    <style>
+        .swiper {
+            width: 100vw;
+            height: 700px;
+            position: relative;
+        }
+
+        .swiper-wrapper{
+            display: flex;
+            align-items: center;
+        }
+
+        .swiper-slide {
+            width: 600px;
+            height: 400px;    
+            /* text-align: center; */
+            
+        }
+
+        .swiper-slide img {
+            /* display: block; */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+        }
+
+        .swiper-slide.swiper-slide-active {
+            transform: scale(1.3,1.2);
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            display: block;
+            width: 60px;
+            height: 60px;
+            z-index: 10;
+            border-radius: 50%;
+            /* background-color: rgb(134, 234, 28); */
+            text-align: center;
+            /* line-height: 60px; */
+        }
+        .swiper-button-next{
+            position: absolute;
+            right: 150px;
+            top: 45%;
+        }
+        .swiper-button-prev{
+            position: absolute;
+            left: 150px;
+            top: 45%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-bar">
+
+        <div class="menu-btn"></div>
+
+        <div class="progress-bar1">
+            <div class="progress-bar2">
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn"></a>
+        </div>
+    </div>
+
+    <div class="navagation">
+        <div class="container">
+            <div class="container_left">
+                <a href="./main.html" class="manu-btn">
+                    <span>
+                        CO<strong>VILLA</strong>
+                    </span>
+                </a>
+                
+            </div>
+            <div class="container_center">
+                <div class="nav-link">
+                    <div class="nav-link-block"><a href="./about.html">ABOUT</a></div>
+                    <div class="nav-link-block"><a href="./journal.html">JOURNAL</a></div>
+                    <div class="nav-link-block"><a href="./support.html">SUPPORT</a></div>
+                </div>
+            </div>
+            <div class="container_right">
+                <div class="destinations" id="destinations-btn">
+                    DESTINATIONS
+                    <div class="logo"></div>
+                </div>
+                <div class="dropdown-menu">
+                    <p class="dropdown-title">CHOOSE A LOCATION</p>
+                    <div class="dropdown-content">
+                        <a href="#" class="dropdown-France"><span>France</span> <span>6 VACATIONS</span></a>
+                        <a href="#" class="dropdown-Indonesia"><span>Indonesia</span> <span>6 VACATIONS</span></a>
+                        <a href="#" class="dropdown-Greece"><span>Greece</span> <span>6 VACATIONS</span></a>
+                        <a href="#" class="dropdown-Egypt"><span>Egypt</span> <span>6 VACATIONS</span></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="side-menu">
+        <a href="" class="close-menu-btn">
+        </a>
+        <div class="container">
+            <h2 class="side-title">Explore vacations
+            </h2>
+            <div class="vacations">
+                <div class="content">
+                    <h2 class="content-title">CHOOSE A CONTINENT <span class="line"></span></h2>
+                    <div class="card Africa">
+                        <h3>Africa</h3>
+                        <p>6 VACATIONS</p>
+                    </div>
+                    <div class="card Asia">
+                        <h3>Asia</h3>
+                        <p>6 VACATIONS</p>
+                    </div>
+                    <div class="card Europe">
+                        <h3>Europe</h3>
+                        <p>12 VACATIONS</p>
+                    </div>
+                </div>
+                <div class="content">
+                    <h2 class="content-title">CHOOSE A DESTINATION <span class="line"></span></h2>
+                    <div class="card France">
+                        <h3>France</h3>
+                        <p>6 VACATIONS</p>
+                    </div>
+                    <div class="card Indonesia">
+                        <h3>Indonesia</h3>
+                        <p>6 VACATIONS</p>
+                    </div>
+                    <div class="card Greece">
+                        <h3>Greece</h3>
+                        <p>6 VACATIONS</p>
+                    </div>
+                    <div class="card Egypt">
+                        <h3>Egypt</h3>
+                        <p>6 VACATIONS</p>
+                    </div>
+                </div>
+                <div class="content">
+                    <h2 class="content-title">CONTACT US <span class="line"></span></h2>
+                    <div class="contact-container">
+                        <div class="contact-card">Schedule a call</div>
+                        <div class="contact-card">info@template.com</div>
+                        <div class="contact-card">(555) 555-5555</div>
+                    </div>
+                </div>
+                <div class="follow-container">
+                    <div class="follow-title">FOLLOW US:</div>
+                    <div class="social-icons">
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                                alt="Instagram"></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="home">
+        <div class="comntainer">
+            <div class="intro">
+                <h3>Family travel agency</h3>
+                <h1>Let's plan your next vacation</h1>
+                <a href="#">CONTACT US</a>
+            </div>
+            <div class="video-hover-button">
+                <img src="./img/play.svg" alt="">
+            </div>
+            <div class="location">
+                <div class="control">
+                    <div class="left">
+                        <img src="./img/arrow-left.svg" alt="">
+                    </div>
+                    <div class="right">
+                        <img src="./img/arrow-right.svg" alt="">
+                    </div>
+                </div>
+                <div class="info">
+                    <h1 class="title">Bahariya Oasis, Egypt</h1>
+                    <p class="price">STARTING AT $6400</p>
+                </div>
+                <div class="goto">
+                    <div class="go">
+                        <a href="#"><img src="./img/go.svg" alt="" class="go-img"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="destinations">
+        <div class="container">
+            <h6>COVILLA DESTINATIONS</h6>
+            <h1>Across the world</h1>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./img/img1.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="./img/img2.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="./img/img3.jpeg" alt=""></div>
+                    <div class="swiper-slide"><img src="./img/img4.jpeg" alt=""></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="benefits">
+        <div class="container">
+            <div class="hero">
+                <div class="heroLeft">
+                    <p>Covilla benefits</p>
+                    <h2>Take your family on the best vacation</h2>
+                    <p>Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin
+                        elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat. Integer et
+                        facilisis elit, vitae.</p>
+                    <button class="destinations2">Choose a Destination ▼</button>
+
+                </div>
+                <div class="heroRight"><img src="./img/6075041a5cc5c760b623c7e7_Travel004.jpeg" alt=""></div>
+
+            </div>
+
+        </div>
+        <div class="dropdown-menu2">
+            <p class="dropdown-title">CHOOSE A LOCATION</p>
+            <div class="dropdown-content">
+                <a href="#" class="dropdown-France dropdown-card"><span>France</span> <span>6 VACATIONS</span></a>
+                <a href="#" class="dropdown-Indonesia dropdown-card"><span>Indonesia</span> <span>6 VACATIONS</span></a>
+                <a href="#" class="dropdown-Greece dropdown-card"><span>Greece</span> <span>6 VACATIONS</span></a>
+                <a href="#" class="dropdown-Egypt dropdown-card"><span>Egypt</span> <span>6 VACATIONS</span></a>
+            </div>
+        </div>
+
+        <div class="why-different">
+            <h2>WHY WE'RE DIFFERENT</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="icon">
+                        <img src="./img/planner.svg" alt="Icon 1">
+                    </div>
+                    <h3>Hands-on planning</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget velit.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">
+                        <img src="./img/value.svg" alt="Icon 2">
+                    </div>
+                    <h3>Added value & perks</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget velit.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">
+                        <img src="./img/suitcase.svg" alt="Icon 3">
+                    </div>
+                    <h3>Access best deals</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget velit.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">
+                        <img src="./img/personalize.svg" alt="Icon 4">
+                    </div>
+                    <h3>Personalized</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget velit.</p>
+                </div>
+            </div>
+            </divdiv>
+        </div>
+    </div>
+
+    <div class="villa">
+        <div class="overlay"></div>
+        <div class="content">
+            <p>
+                Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque.
+                Sed vitae sollicitudin elit, ac tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat.
+                Integer et facilisis elit, vitae lobortis enim.
+            </p>
+            <h2>Samantha Vohnhale</h2>
+            <div class="buttons">
+                <button class="prev"><img src="./img/arrow-left.svg" alt=""></button>
+                <button class="next"><img src="./img/arrow-right.svg" alt=""></button>
+            </div>
+        </div>
+        <div class="pagination">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+    </div>
+
+    <div class="popularVacation">
+
+        <div class="container">
+            <h3 class="VacationTitle">POPULAR COVILLA VACATIONS</h3>
+            <div class="tabs">
+                <div class="tab active" onclick="selectTab(0)">EGYPT</div>
+                <div class="tab" onclick="selectTab(1)">GREECE</div>
+                <div class="tab" onclick="selectTab(2)">INDONESIA</div>
+                <div class="tab" onclick="selectTab(3)">FRANCE</div>
+            </div>
+            <div class="progress-bar">
+                <div class="indicator"></div>
+            </div>
+            <div class="VacationCards">
+                <div class="VacationCard">
+                    <img src="./img/bah.jpeg" alt="Bahariya Oasis" class="pvImg1">
+                    <h4 class="pvTitle1">Bahariya Oasis</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
+                    <div class="priceContainer">
+                        <div class="VacationPrice">Rates From <span class="pvPrice1">$6400</span></div>
+                        <button class="details-btn">DETAILS</button>
+                    </div>
+
+                </div>
+                <div class="VacationCard">
+                    <img src="./img/sah.jpeg" alt="Sahl Hasheesh" class="pvImg2">
+                    <h4 class="pvTitle2">Sahl Hasheesh</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
+                    <div class="priceContainer">
+                        <div class="VacationPrice">Rates From <span class="pvPrice2">$7700</span></div>
+                        <button class="details-btn">DETAILS</button>
+                    </div>
+
+                </div>
+                <div class="VacationCard">
+                    <img src="./img/alx.jpeg" alt="Alexandria" class="pvImg3">
+                    <h4 class="pvTitle3">Alexandria</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
+                    <div class="priceContainer">
+                        <div class="VacationPrice">Rates From <span class="pvPrice">$5300</span></div>
+                        <button class="details-btn">DETAILS</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Promise">
+        <div class="overlay"></div>
+        <div class="content">
+            <span class="subtitle">COVILLA PROMISE</span>
+            <h1>Get unparalleled peace of mind <br> from start to finish of your trip</h1>
+            <div class="buttons">
+                <button class="primary">CONTACT US</button>
+                <button class="secondary">HOW IT WORKS</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="planning">
+        <div class="card">
+            <img src="./img/ppl.jpeg" alt="Vacation" class="card-image">
+            <div class="card-content">
+                <span class="small-title">GET STARTED TODAY</span>
+                <h1>Take the stress out of planning vacations</h1>
+                <p>
+                    Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque.
+                    Sed vitae sollicitudin elit, ac tristique nisi.
+                </p>
+                <button class="cta-button">MEET YOUR TRAVEL AGENTS</button>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <h3>HOW IT WORKS</h3>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>First, clone this template.</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget velit ut
+                        sollicitudin. Nunc ullamcorper nibh nulla. In viverra id felis id tincidunt.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>Next, use it on your projects.</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget velit ut
+                        sollicitudin. Nunc ullamcorper nibh nulla. In viverra id felis id tincidunt.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>Then, tell me what you think.</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget velit ut
+                        sollicitudin. Nunc ullamcorper nibh nulla. In viverra id felis id tincidunt.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h4>Finally, share the template.</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget velit ut
+                        sollicitudin. Nunc ullamcorper nibh nulla. In viverra id felis id tincidunt.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about">
+        <div class="about-text">
+            <h6>ABOUT COVILLA</h6>
+            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget velit ut sollicitudin.
+                Nunc ullamcorper nibh nulla.</h1>
+        </div>
+        <div class="about-description">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget velit ut sollicitudin.
+                Nunc ullamcorper nibh nulla. In viverra id felis id tincidunt.</p>
+            <p>Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac
+                tristique nisi. Pellentesque rutrum egestas massa lacinia volutpat. Integer et facilisis elit, vitae
+                lobortis enim.</p>
+        </div>
+    </div>
+
+    <div class="familyPic">
+        <div class="swiperImgs">
+            <div class="pic" data-index = '0'>
+                <img class="img" src="./family-images/Family001.jpeg" alt="" data-index = '0'>
+                <div class="imgIcon" data-index = '0'>
+                    <img src="https://cdn.prod.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
+                        alt="" data-index = '0'>
+                    <p data-index = '0'>Click</p>
+                </div>
+            </div>
+            <div class="pic" data-index = '1'>
+                <img class="img" src="./family-images/Family002.jpeg" alt="" data-index = '1'>
+                <div class="imgIcon" data-index = '1'>
+                    <img src="https://cdn.prod.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
+                        alt="" data-index = '1'>
+                    <p data-index = '1'>Click</p>
+                </div>
+            </div>
+            <div class="pic" data-index = '2'>
+                <img class="img" src="./family-images/Family003.jpeg" alt="" data-index = '2'>
+                <div class="imgIcon" data-index = '2'>
+                    <img data-index = '2' src="https://cdn.prod.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
+                        alt="">
+                    <p data-index = '2'>Click</p>
+                </div>
+            </div>
+            <div class="pic" data-index = '3'>
+                <img class="img" src="./family-images/Family004.jpeg" alt="" data-index = '3'>
+                <div class="imgIcon" data-index = '3'>
+                    <img src="https://cdn.prod.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
+                        alt="" data-index = '3'>
+                    <p data-index = '3'>Click</p>
+                </div>
+            </div>
+            <div class="pic" data-index = '4'>
+                <img class="img" src="./family-images/Family005.jpeg" alt="" data-index = '4'>
+                <div class="imgIcon" data-index = '4'>
+                    <img src="https://cdn.prod.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
+                        alt="" data-index = '4'>
+                    <p data-index = '4'>Click</p>
+                </div>
+            </div>
+            <div class="pic" data-index = '5'>
+                <img class="img" src="./family-images/Family006.jpeg" alt="" data-index = '5'>
+                <div class="imgIcon" data-index = '5'>
+                    <img src="https://cdn.prod.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
+                        alt="" data-index = '5'>
+                    <p data-index = '5'>Click</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper mySwipers" id="bigSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="./family-images/Family001.jpeg" alt=""></div>
+                <div class="swiper-slide"><img src="./family-images/Family002.jpeg" alt=""></div>
+                <div class="swiper-slide"><img src="./family-images/Family003.jpeg" alt=""></div>
+                <div class="swiper-slide"><img src="./family-images/Family004.jpeg" alt=""></div>
+                <div class="swiper-slide"><img src="./family-images/Family005.jpeg" alt=""></div>
+                <div class="swiper-slide"><img src="./family-images/Family006.jpeg" alt=""></div>
+    
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination1"></div>
+            <div class="close" id="closeSwiper">
+                <img src="./family-images/closeWhite.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="agents">
+        <div class="agent-top">
+            <h2>Meet Your Travel Agents</h2>
+            <div class="line"></div>
+            <button class="about-btn">About Us</button>
+        </div>
+
+        <div class="container">
+            <div class="agent-card">
+                <img src="./img/ppl1.jpeg" alt="Terry Von">
+                <h3>Terry Von</h3>
+                <p>New York, New York</p>
+            </div>
+            <div class="agent-card">
+                <img src="./img/ppl2.jpeg" alt="Sarah Prat">
+                <h3>Sarah Prat</h3>
+                <p>Austin, Texas</p>
+            </div>
+            <div class="agent-card">
+                <img src="./img/ppl3.jpeg" alt="Samantha Tai">
+                <h3>Samantha Tai</h3>
+                <p>Miami, Florida</p>
+            </div>
+            <div class="agent-card">
+                <img src="./img/ppl4.jpeg" alt="Craig Wents">
+                <h3>Craig Wents</h3>
+                <p>Brooklyn, New York</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="post">
+        <div class="container">
+            <div class="main-post">
+                <img src="./img/post.jpeg" alt="Main Post">
+                <div class="post-content">
+                    <span class="post-date">April 19, 2021</span>
+                    <h2>What Will Website Be Like In 100 Years?</h2>
+                    <p>Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac tristique.</p>
+                    <button class="read-more">Read More</button>
+                </div>
+            </div>
+            <div class="sidebar">
+                <h3>Popular Posts</h3>
+                <div class="popular-post">
+                    <img src="./img/post1.jpeg" alt="Post 1">
+                    <div class="post-info">
+                        <span class="post-date">April 19, 2021</span>
+                        <h4>14 Common Misconceptions About Web Design</h4>
+                    </div>
+                </div>
+    
+                <div class="popular-post">
+                    <img src="./img/post2.jpeg" alt="Post 2">
+                    <div class="post-info">
+                        <span class="post-date">April 19, 2021</span>
+                        <h4>5 Principles Of Effective Web Design</h4>
+                    </div>
+                </div>
+    
+                <div class="popular-post">
+                    <img src="./img/post3.jpeg" alt="Post 3">
+                    <div class="post-info">
+                        <span class="post-date">April 19, 2021</span>
+                        <h4>10 Web Design Blogs You Can't Miss</h4>
+                    </div>
+                </div>
+    
+                <div class="popular-post">
+                    <img src="./img/post4.jpeg" alt="Post 4">
+                    <div class="post-info">
+                        <span class="post-date">April 19, 2021</span>
+                        <h4>Designers Who Changed the Web</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-left">
+            <button class="selected">Destinations</button>
+            <a href="#">France</a>
+            <a href="#">Indonesia</a>
+            <a href="#">Greece</a>
+            <a href="#">Egypt</a>
+        </div>
+        <div class="footer-right">
+            <h3>COVILLA</h3>
+            <p>© 2021 COVILLA</p>
+        </div>
+    </div>
+
+    <script src="./main.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                type: "progressbar",
+            },
+
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+
+            slidesPerView: 3,
+            spaceBetween: 160,
+            centeredSlides: true,
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        
+      // 大图swiper部分
+        var swiper = new Swiper(".mySwipers", {
+            pagination: {
+                el: ".swiper-pagination1",
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + "</span>";
+                },
+            },
+            // 左右按钮
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+
+        const swiperImgs = document.querySelector('.swiperImgs')
+        const pics = document.querySelectorAll('.pic')
+        const closeSwiper = document.getElementById('closeSwiper')
+
+        // 鼠标移上去会图片移动
+        swiperImgs.addEventListener('mouseover', function (e) {
+            // 获取鼠标x轴位置
+            // console.log(e.clientX);
+            // console.log(swiperImg.offsetWidth / 2);
+            if (e.clientX > swiperImgs.offsetWidth / 2) {
+                swiperImgs.style.marginLeft = '-960px'
+            } else {
+                swiperImgs.style.marginLeft = '0px'
+            }
+        })
+        swiperImgs.addEventListener('mouseout', function (e) {
+            swiperImgs.style.marginLeft = '-480px'
+        })
+        // 悬浮照片上 会出现文字和图标
+        pics.forEach(pic => {
+            pic.addEventListener('mouseover', function () {
+                const imgIcon = this.querySelector('.imgIcon')
+                imgIcon.style.display = 'block'
+            })
+            pic.addEventListener('mouseout', function () {
+                const imgIcon = this.querySelector('.imgIcon')
+                imgIcon.style.display = 'none'
+            })
+            // 点击图片出现大图
+            pic.addEventListener('click', function (e) {
+                // console.log(e.target);
+                // console.log(e.target.dataset);
+                swiper.slideTo(e.target.dataset.index)
+                bigSwiper.style.display = 'block';
+            })
+        })
+
+        // 关闭大图
+        closeSwiper.addEventListener('click', function () {
+            bigSwiper.style.display = 'none';
+
+        })
+
+    </script>
+</body>
+
+</html>

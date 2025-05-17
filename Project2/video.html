@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* video ----- */
+    .circle {
+      width: 400px;
+      height: 400px;
+      /* border: 1px solid black; */
+      /* background-color: aquamarine; */
+      margin-right: 80px;
+      position: relative;
+    }
+
+    .circle1 {
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      /* background-color: aqua; */
+      background-color: rgba(8, 28, 58, .4);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -190px;
+      margin-top: -190px;
+      opacity: 0;
+    }
+
+
+
+    .circle2 {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      /* background-color: rgb(242, 244, 78); */
+      background-color: rgba(255, 255, 255, .4);
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -160px;
+      margin-top: -160px;
+      opacity: 0;
+    }
+
+    .circle3 {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background-color: rgb(100, 124, 245);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -140px;
+      margin-top: -140px;
+      opacity: 0;
+      /* animation: videoPulse 2s infinite; */
+      /* animation-delay: 0.5s; */
+      transform: scale(.6);
+      transition: all 2s;
+      overflow: hidden;
+    }
+
+
+    .video-icon {
+      width: 100px;
+      height: 100px;
+      border: 1px dashed rgb(244, 244, 244, .3);
+      background-color: rgba(255, 255, 255, 0);
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -50px;
+      margin-top: -50px;
+      z-index: 2;
+    }
+
+    .video-icon-circle {
+      width: 60px;
+      height: 60px;
+      background-color: rgba(8, 28, 58, .1);
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -30px;
+      margin-top: -30px;
+    }
+
+    .video-icon-circle img {
+      width: 14px;
+      height: 14px;
+      margin-top: 23px;
+      margin-left: 23px;
+
+    }
+
+    .videos {
+      width: 100%;
+      height: 100%;
+      /* 视频覆盖盒子 */
+      object-fit: cover;
+    }
+
+
+    @keyframes videoPulse {
+      0% {
+        opacity: 0.6;
+        transform: scale(0);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0.6;
+        transform: scale(.6);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="circle">
+    <div class="circle1" id="circleOne"></div>
+    <div class="circle2" id="circleTwo"></div>
+    <div class="circle3" id="circleThree">
+      <!-- <img src="../video/poster.jpg" alt=""> -->
+      <video id="videos" autoplay loop muted controls>
+        <source src="./video/video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-icon" id="videoIcon">
+      <div class="video-icon-circle" id="videoIconCircle">
+        <img src="./video/play.svg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 视频动画
+    const videoIcon = document.getElementById('videoIcon')
+    const videoIconCircle = document.getElementById('videoIconCircle')
+    const circleOne = document.getElementById('circleOne')
+    const circleTwo = document.getElementById('circleTwo')
+    const circleThree = document.getElementById('circleThree')
+
+    videoIcon.addEventListener('mouseover', function () {
+      circleOne.style.animation = 'videoPulse 2s infinite';
+      circleTwo.style.animation = 'videoPulse 2s infinite';
+      circleThree.style.transform = 'scale(1)'
+      circleThree.style.opacity = '1'
+      videoIcon.style.backgroundColor = '#fff'
+      videoIcon.style.border = '0'
+      videoIconCircle.style.backgroundColor = '#081c3a'
+    })
+    videoIcon.addEventListener('mouseout', function () {
+      circleOne.style.animation = false;
+      circleTwo.style.animation = false;
+      circleThree.style.opacity = '0'
+      videoIcon.style.backgroundColor = 'rgba(255, 255, 255,0)'
+      videoIcon.style.border = '1px dashed rgb(244, 244, 244,.3)'
+      videoIconCircle.style.backgroundColor = 'rgba(8, 28, 58,.1)'
+
+    })
+  </script>
+</body>
+
+</html>
