@@ -124,7 +124,7 @@ body {
   color: #111;
   margin-top: 45px;
 }
-.side-menu .vacations .content .line {
+.side-menu .vacations .content .agents_line {
   flex-grow: 1;
   height: 1px;
   background: #ddd;
@@ -534,38 +534,105 @@ body {
   margin-bottom: 40px;
   line-height: 80px;
 }
-.home .video-hover-button {
-  width: 130px;
-  height: 130px;
+.home .video-hover-button .circle {
+  width: 400px;
+  height: 400px;
+  margin-right: 80px;
   position: absolute;
-  top: 40%;
-  right: 20%;
-  border-radius: 50%;
-  border: 2px dotted rgba(252, 248, 248, 0.796);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.8s ease;
+  top: 20%;
+  right: 8%;
 }
-.home .video-hover-button::after {
-  content: "";
+.home .video-hover-button .circle1 {
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background-color: rgba(8, 28, 58, 0.4);
   position: absolute;
-  width: 80px;
-  height: 80px;
-  background-color: rgba(237, 233, 233, 0.228);
-  border: 1.5px solid rgba(200, 200, 200, 0.5);
+  top: 50%;
+  left: 50%;
+  margin-left: -190px;
+  margin-top: -190px;
+  opacity: 0;
+}
+.home .video-hover-button .circle2 {
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
+  /* background-color: rgb(242, 244, 78); */
+  background-color: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -160px;
+  margin-top: -160px;
+  opacity: 0;
 }
-.home .video-hover-button:hover {
-  background-color: white;
-  border: none;
+.home .video-hover-button .circle3 {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background-color: #647cf5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -140px;
+  margin-top: -140px;
+  opacity: 0;
+  /* animation: videoPulse 2s infinite; */
+  /* animation-delay: 0.5s; */
+  transform: scale(0.6);
+  transition: all 2s;
+  overflow: hidden;
 }
-.home .video-hover-button:hover::after {
-  background-color: #0d1a32;
-  background-image: url('img/play.svg');
-  background-size: 24px;
-  background-position: center;
-  background-repeat: no-repeat;
+.home .video-hover-button .video-icon {
+  width: 100px;
+  height: 100px;
+  border: 1px dashed #f4f4f4;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  z-index: 2;
+}
+.home .video-hover-button .video-icon-circle {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(58, 67, 95, 0.6);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+.home .video-hover-button .video-icon-circle img {
+  width: 14px;
+  height: 14px;
+  margin-top: 23px;
+  margin-left: 23px;
+}
+.home .video-hover-button .videos {
+  width: 100%;
+  height: 100%;
+  /* 视频覆盖盒子 */
+  object-fit: cover;
+}
+@keyframes videoPulse {
+  0% {
+    opacity: 0.6;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(0.6);
+  }
 }
 .home .location {
   width: 35vw;
@@ -684,12 +751,33 @@ body {
   text-align: center;
 }
 .destinations .container .swiper-button-next {
-  top: 90%;
-  right: 40%;
+  top: 85%;
+  right: 44%;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .destinations .container .swiper-button-prev {
-  top: 90%;
-  left: 40%;
+  top: 85%;
+  left: 44%;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.destinations .container .swiper-button-next::after,
+.destinations .container .swiper-button-prev::after {
+  color: black;
+  font-size: 18px;
 }
 .benefits {
   width: 100vw;
@@ -983,59 +1071,139 @@ body {
   position: relative;
   align-items: left;
 }
-.popularVacation .container {
-  background: white;
-  padding: 30px;
-  border-radius: 5px;
-  max-width: 70vw;
+.popularVacation .vacation_container {
+  width: 80%;
   margin: auto;
-  margin-bottom: 100px;
-}
-.popularVacation .container .VacationTitle {
-  display: block;
-  text-transform: uppercase;
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: black;
-  margin-bottom: 20px;
-  max-width: 1100px;
-}
-.popularVacation .tabs {
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 0;
-  cursor: pointer;
-}
-.popularVacation .tab {
-  font-size: 16px;
-  padding: 10px;
-  color: #aaa;
-  transition: all 0.3s ease;
-}
-.popularVacation .tab.active {
-  font-weight: bold;
-  color: #222;
-}
-.popularVacation .progress-bar {
+  padding-top: 50px;
   position: relative;
-  width: 95%;
-  height: 1px;
-  background-color: #ddd;
-  margin: 10px auto 30px;
+  background-color: #fff;
+  margin-top: -60px;
+  border-radius: 6px;
 }
-.popularVacation .indicator {
+.popularVacation .vacation_container .bar1 {
+  width: 96%;
+  height: 2px;
+  background-color: rgba(169, 165, 165, 0.3);
   position: absolute;
+  left: 2%;
+  top: 129px;
+}
+.popularVacation .vacation_container .bar1 .bar2 {
   width: 25%;
   height: 2px;
-  background: #222;
-  transition: transform 0.3s ease;
+  background-color: #000000;
+  transition: all 1s linear;
 }
-.popularVacation .VacationCards {
+.popularVacation .vacation_container .lines {
+  width: 100%;
+  margin: auto;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.popularVacation .vacation_container .lines .lineBox {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.popularVacation .vacation_container .lines .lineBox .lineTitle {
+  letter-spacing: 2px;
+}
+.popularVacation .vacation_container .lines .lineBox .line-father {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+.popularVacation .vacation_container .lines .lineBox .line-father .line {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: #ffffff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -20px;
+  margin-left: -20px;
+  transform: scale(0);
+  transition: all 0.8s;
+}
+.popularVacation .vacation_container .lines .lineBox .line-father .line.active {
+  transform: scale(1);
+  border-color: black;
+}
+.popularVacation .vacation_container .lines .lineBox .line-father .line-son {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(169, 165, 165, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -6px;
+  margin-left: -6px;
+  transition: all 0.8s;
+}
+.popularVacation .vacation_container .lines .lineBox .line-father .line-son.active {
+  background-color: black;
+}
+@keyframes bar2 {
+  0% {
+    width: 25%;
+    background-color: black;
+  }
+  25% {
+    width: 50%;
+    background-color: black;
+  }
+  75% {
+    width: 75%;
+    background-color: black;
+  }
+  100% {
+    width: 100%;
+    background-color: black;
+  }
+}
+@keyframes line {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes line-son {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+    background-color: black;
+  }
+}
+.popularVacation .vacation_container .allContent {
+  width: 100%;
+  background-color: #fefefe;
+  margin-top: 50px;
+}
+.popularVacation .vacation_container .allContent .contentBar {
+  display: none;
+}
+.popularVacation .vacation_container .allContent .contentBar .content {
+  width: 96%;
+  margin: auto;
+  height: 490px;
+}
+.popularVacation .vacation_container .allContent .contentBar .content .VacationCards {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.popularVacation .VacationCard {
+.popularVacation .vacation_container .allContent .contentBar .content .VacationCard {
   background: #fff;
   padding: 15px;
   border-radius: 5px;
@@ -1044,42 +1212,42 @@ body {
   text-align: left;
   transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
-.popularVacation .VacationCard:hover {
+.popularVacation .vacation_container .allContent .contentBar .content .VacationCard:hover {
   transform: scale(1.03);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
-.popularVacation .VacationCard img {
+.popularVacation .vacation_container .allContent .contentBar .content .VacationCard img {
   width: 100%;
   height: 180px;
   border-radius: 8px;
 }
-.popularVacation .VacationCard h4 {
+.popularVacation .vacation_container .allContent .contentBar .content .VacationCard h4 {
   margin: 15px 0 10px;
   font-size: 18px;
   font-weight: 400;
 }
-.popularVacation .VacationCard p {
+.popularVacation .vacation_container .allContent .contentBar .content .VacationCard p {
   font-size: 14px;
   color: #777;
 }
-.popularVacation .VacationPrice {
+.popularVacation .vacation_container .allContent .contentBar .content .VacationPrice {
   display: block;
   font-size: 12px;
   margin: 10px 0;
   color: #444;
 }
-.popularVacation .priceContainer {
+.popularVacation .vacation_container .allContent .contentBar .content .priceContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 40px;
 }
-.popularVacation .VacationPrice span {
+.popularVacation .vacation_container .allContent .contentBar .content .VacationPrice span {
   display: block;
   font-weight: bold;
   font-size: 12px;
 }
-.popularVacation .details-btn {
+.popularVacation .vacation_container .allContent .contentBar .content .details-btn {
   height: 35px;
   width: 80px;
   color: black;
@@ -1090,9 +1258,12 @@ body {
   border-radius: 5px;
   transition: 0.3s;
 }
-.popularVacation .details-btn:hover {
+.popularVacation .vacation_container .allContent .contentBar .content .details-btn:hover {
   background: #444;
   color: white;
+}
+.popularVacation .vacation_container .contentBar.active {
+  display: block;
 }
 .Promise {
   position: relative;
@@ -1380,7 +1551,7 @@ body {
   position: relative;
 }
 .familyPic .swiper-slide img {
-  width: 50%;
+  width: 60%;
 }
 .familyPic .swiper-pagination-clickable {
   display: flex;

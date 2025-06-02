@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-    
+
     <style>
         .swiper {
             width: 100vw;
@@ -16,16 +16,16 @@
             position: relative;
         }
 
-        .swiper-wrapper{
+        .swiper-wrapper {
             display: flex;
             align-items: center;
         }
 
         .swiper-slide {
             width: 600px;
-            height: 400px;    
-            /* text-align: center; */
-            
+            height: 400px;
+            transition: transform 0.8s ease;
+
         }
 
         .swiper-slide img {
@@ -38,7 +38,7 @@
         }
 
         .swiper-slide.swiper-slide-active {
-            transform: scale(1.3,1.2);
+            transform: scale(1.2, 1.2);
         }
 
         .swiper-button-next,
@@ -52,12 +52,14 @@
             text-align: center;
             /* line-height: 60px; */
         }
-        .swiper-button-next{
+
+        .swiper-button-next {
             position: absolute;
             right: 150px;
             top: 45%;
         }
-        .swiper-button-prev{
+
+        .swiper-button-prev {
             position: absolute;
             left: 150px;
             top: 45%;
@@ -89,7 +91,7 @@
                         CO<strong>VILLA</strong>
                     </span>
                 </a>
-                
+
             </div>
             <div class="container_center">
                 <div class="nav-link">
@@ -187,7 +189,20 @@
                 <a href="#">CONTACT US</a>
             </div>
             <div class="video-hover-button">
-                <img src="./img/play.svg" alt="">
+                <div class="circle">
+                    <div class="circle1" id="circleOne"></div>
+                    <div class="circle2" id="circleTwo"></div>
+                    <div class="circle3" id="circleThree">
+                        <video id="videos" autoplay loop muted controls>
+                            <source src="./video/video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="video-icon" id="videoIcon">
+                        <div class="video-icon-circle" id="videoIconCircle">
+                            <img src="./video/play.svg" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="location">
                 <div class="control">
@@ -316,50 +331,194 @@
     </div>
 
     <div class="popularVacation">
-
-        <div class="container">
-            <h3 class="VacationTitle">POPULAR COVILLA VACATIONS</h3>
-            <div class="tabs">
-                <div class="tab active" onclick="selectTab(0)">EGYPT</div>
-                <div class="tab" onclick="selectTab(1)">GREECE</div>
-                <div class="tab" onclick="selectTab(2)">INDONESIA</div>
-                <div class="tab" onclick="selectTab(3)">FRANCE</div>
+        <div class="vacation_container">
+            <!-- bar1是页面中最长的灰色线，bar2是展示的短的线 -->
+            <div class="bar1">
+                <div class="bar2"></div>
             </div>
-            <div class="progress-bar">
-                <div class="indicator"></div>
-            </div>
-            <div class="VacationCards">
-                <div class="VacationCard">
-                    <img src="./img/bah.jpeg" alt="Bahariya Oasis" class="pvImg1">
-                    <h4 class="pvTitle1">Bahariya Oasis</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
-                    <div class="priceContainer">
-                        <div class="VacationPrice">Rates From <span class="pvPrice1">$6400</span></div>
-                        <button class="details-btn">DETAILS</button>
+            <!-- 线条 -->
+            <div class="lines">
+                <div class="lineBox">
+                    <div class="lineTitle">EGYPT</div>
+                    <div class="line-father">
+                        <!-- line是黑色的大圆环， lin-son是内部的小黑点 -->
+                        <div class="line"> </div>
+                        <div class="line-son"></div>
                     </div>
-
                 </div>
-                <div class="VacationCard">
-                    <img src="./img/sah.jpeg" alt="Sahl Hasheesh" class="pvImg2">
-                    <h4 class="pvTitle2">Sahl Hasheesh</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
-                    <div class="priceContainer">
-                        <div class="VacationPrice">Rates From <span class="pvPrice2">$7700</span></div>
-                        <button class="details-btn">DETAILS</button>
+                <div class="lineBox">
+                    <div class="lineTitle">GREECE</div>
+                    <div class="line-father">
+                        <div class="line"> </div>
+                        <div class="line-son"></div>
                     </div>
-
                 </div>
-                <div class="VacationCard">
-                    <img src="./img/alx.jpeg" alt="Alexandria" class="pvImg3">
-                    <h4 class="pvTitle3">Alexandria</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
-                    <div class="priceContainer">
-                        <div class="VacationPrice">Rates From <span class="pvPrice">$5300</span></div>
-                        <button class="details-btn">DETAILS</button>
+                <div class="lineBox">
+                    <div class="lineTitle">INDONESIA</div>
+                    <div class="line-father">
+                        <div class="line"> </div>
+                        <div class="line-son"></div>
                     </div>
-
+                </div>
+                <div class="lineBox">
+                    <div class="lineTitle">FRANCE</div>
+                    <div class="line-father">
+                        <div class="line"> </div>
+                        <div class="line-son"></div>
+                    </div>
                 </div>
             </div>
+            <!-- 内容 -->
+            <div class="allContent">
+                <div class="contentBar active">
+                    <div class="content contentBar1 active">
+                        <div class="VacationCards">
+                            <div class="VacationCard">
+                                <img src="./img/bah.jpeg" alt="Bahariya Oasis" class="pvImg1">
+                                <h4 class="pvTitle1">Bahariya Oasis</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
+                                <div class="priceContainer">
+                                    <div class="VacationPrice">Rates From <span class="pvPrice1">$6400</span></div>
+                                    <button class="details-btn">DETAILS</button>
+                                </div>
+
+                            </div>
+                            <div class="VacationCard">
+                                <img src="./img/sah.jpeg" alt="Sahl Hasheesh" class="pvImg2">
+                                <h4 class="pvTitle2">Sahl Hasheesh</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
+                                <div class="priceContainer">
+                                    <div class="VacationPrice">Rates From <span class="pvPrice2">$7700</span></div>
+                                    <button class="details-btn">DETAILS</button>
+                                </div>
+
+                            </div>
+                            <div class="VacationCard">
+                                <img src="./img/alx.jpeg" alt="Alexandria" class="pvImg3">
+                                <h4 class="pvTitle3">Alexandria</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
+                                <div class="priceContainer">
+                                    <div class="VacationPrice">Rates From <span class="pvPrice">$5300</span></div>
+                                    <button class="details-btn">DETAILS</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contentBar">
+                    <div class="content contentBar2">
+                        <div class="VacationCards">
+                            <div class="VacationCard">
+                                <img src="./img/pal.jpeg" class="pvImg1">
+                                <h4 class="pvTitle1">Palaiokastritsa</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
+                                <div class="priceContainer">
+                                    <div class="VacationPrice">Rates From <span class="pvPrice1">$5600</span></div>
+                                    <button class="details-btn">DETAILS</button>
+                                </div>
+
+                            </div>
+                            <div class="VacationCard">
+                                <img src="./img/met.jpeg" class="pvImg2">
+                                <h4 class="pvTitle2">Meteora</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
+                                <div class="priceContainer">
+                                    <div class="VacationPrice">Rates From <span class="pvPrice2">$2800</span></div>
+                                    <button class="details-btn">DETAILS</button>
+                                </div>
+
+                            </div>
+                            <div class="VacationCard">
+                                <img src="./img/the.jpeg" alt="Alexandria" class="pvImg3">
+                                <h4 class="pvTitle3">Thessaloniki</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
+                                <div class="priceContainer">
+                                    <div class="VacationPrice">Rates From <span class="pvPrice">$6700</span></div>
+                                    <button class="details-btn">DETAILS</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contentBar">
+                    <div class="content contentBar3">
+                        <div class="VacationCards">
+                            <div class="VacationCard">
+                                <img src="./img/can.jpeg" alt="Bahariya Oasis" class="pvImg1">
+                                <h4 class="pvTitle1">Canggu</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
+                                <div class="priceContainer">
+                                    <div class="VacationPrice">Rates From <span class="pvPrice1">$6500</span></div>
+                                    <button class="details-btn">DETAILS</button>
+                                </div>
+
+                            </div>
+                            <div class="VacationCard">
+                                <img src="./img/kom.jpeg" alt="Sahl Hasheesh" class="pvImg2">
+                                <h4 class="pvTitle2">Komodo</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
+                                <div class="priceContainer">
+                                    <div class="VacationPrice">Rates From <span class="pvPrice2">$7600</span></div>
+                                    <button class="details-btn">DETAILS</button>
+                                </div>
+
+                            </div>
+                            <div class="VacationCard">
+                                <img src="./img/pen.jpeg" alt="Alexandria" class="pvImg3">
+                                <h4 class="pvTitle3">Penida Island</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
+                                <div class="priceContainer">
+                                    <div class="VacationPrice">Rates From <span class="pvPrice">$2800</span></div>
+                                    <button class="details-btn">DETAILS</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contentBar">
+                    <div class="content contentBar4">
+                        <div class="VacationCards">
+                            <div class="VacationCard">
+                                <img src="./img/bon.jpeg" alt="Bahariya Oasis" class="pvImg1">
+                                <h4 class="pvTitle1">Bonifacio</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
+                                <div class="priceContainer">
+                                    <div class="VacationPrice">Rates From <span class="pvPrice1">$1400</span></div>
+                                    <button class="details-btn">DETAILS</button>
+                                </div>
+
+                            </div>
+                            <div class="VacationCard">
+                                <img src="./img/bri.jpeg" alt="Sahl Hasheesh" class="pvImg2">
+                                <h4 class="pvTitle2">Brittany</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
+                                <div class="priceContainer">
+                                    <div class="VacationPrice">Rates From <span class="pvPrice2">$3600</span></div>
+                                    <button class="details-btn">DETAILS</button>
+                                </div>
+
+                            </div>
+                            <div class="VacationCard">
+                                <img src="./img/car.jpeg" alt="Alexandria" class="pvImg3">
+                                <h4 class="pvTitle3">Carcassonne</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sollicitudin eget.</p>
+                                <div class="priceContainer">
+                                    <div class="VacationPrice">Rates From <span class="pvPrice">$3900</span></div>
+                                    <button class="details-btn">DETAILS</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
         </div>
     </div>
 
@@ -446,52 +605,53 @@
 
     <div class="familyPic">
         <div class="swiperImgs">
-            <div class="pic" data-index = '0'>
-                <img class="img" src="./family-images/Family001.jpeg" alt="" data-index = '0'>
-                <div class="imgIcon" data-index = '0'>
+            <div class="pic" data-index='0'>
+                <img class="img" src="./family-images/Family001.jpeg" alt="" data-index='0'>
+                <div class="imgIcon" data-index='0'>
                     <img src="https://cdn.prod.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
-                        alt="" data-index = '0'>
-                    <p data-index = '0'>Click</p>
+                        alt="" data-index='0'>
+                    <p data-index='0'>Click</p>
                 </div>
             </div>
-            <div class="pic" data-index = '1'>
-                <img class="img" src="./family-images/Family002.jpeg" alt="" data-index = '1'>
-                <div class="imgIcon" data-index = '1'>
+            <div class="pic" data-index='1'>
+                <img class="img" src="./family-images/Family002.jpeg" alt="" data-index='1'>
+                <div class="imgIcon" data-index='1'>
                     <img src="https://cdn.prod.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
-                        alt="" data-index = '1'>
-                    <p data-index = '1'>Click</p>
+                        alt="" data-index='1'>
+                    <p data-index='1'>Click</p>
                 </div>
             </div>
-            <div class="pic" data-index = '2'>
-                <img class="img" src="./family-images/Family003.jpeg" alt="" data-index = '2'>
-                <div class="imgIcon" data-index = '2'>
-                    <img data-index = '2' src="https://cdn.prod.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
+            <div class="pic" data-index='2'>
+                <img class="img" src="./family-images/Family003.jpeg" alt="" data-index='2'>
+                <div class="imgIcon" data-index='2'>
+                    <img data-index='2'
+                        src="https://cdn.prod.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
                         alt="">
-                    <p data-index = '2'>Click</p>
+                    <p data-index='2'>Click</p>
                 </div>
             </div>
-            <div class="pic" data-index = '3'>
-                <img class="img" src="./family-images/Family004.jpeg" alt="" data-index = '3'>
-                <div class="imgIcon" data-index = '3'>
+            <div class="pic" data-index='3'>
+                <img class="img" src="./family-images/Family004.jpeg" alt="" data-index='3'>
+                <div class="imgIcon" data-index='3'>
                     <img src="https://cdn.prod.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
-                        alt="" data-index = '3'>
-                    <p data-index = '3'>Click</p>
+                        alt="" data-index='3'>
+                    <p data-index='3'>Click</p>
                 </div>
             </div>
-            <div class="pic" data-index = '4'>
-                <img class="img" src="./family-images/Family005.jpeg" alt="" data-index = '4'>
-                <div class="imgIcon" data-index = '4'>
+            <div class="pic" data-index='4'>
+                <img class="img" src="./family-images/Family005.jpeg" alt="" data-index='4'>
+                <div class="imgIcon" data-index='4'>
                     <img src="https://cdn.prod.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
-                        alt="" data-index = '4'>
-                    <p data-index = '4'>Click</p>
+                        alt="" data-index='4'>
+                    <p data-index='4'>Click</p>
                 </div>
             </div>
-            <div class="pic" data-index = '5'>
-                <img class="img" src="./family-images/Family006.jpeg" alt="" data-index = '5'>
-                <div class="imgIcon" data-index = '5'>
+            <div class="pic" data-index='5'>
+                <img class="img" src="./family-images/Family006.jpeg" alt="" data-index='5'>
+                <div class="imgIcon" data-index='5'>
                     <img src="https://cdn.prod.website-files.com/60675f13ea324fdd4af9ef2a/607dbd26c4818812ab5d87f7_View.svg"
-                        alt="" data-index = '5'>
-                    <p data-index = '5'>Click</p>
+                        alt="" data-index='5'>
+                    <p data-index='5'>Click</p>
                 </div>
             </div>
         </div>
@@ -503,7 +663,7 @@
                 <div class="swiper-slide"><img src="./family-images/Family004.jpeg" alt=""></div>
                 <div class="swiper-slide"><img src="./family-images/Family005.jpeg" alt=""></div>
                 <div class="swiper-slide"><img src="./family-images/Family006.jpeg" alt=""></div>
-    
+
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -517,7 +677,7 @@
     <div class="agents">
         <div class="agent-top">
             <h2>Meet Your Travel Agents</h2>
-            <div class="line"></div>
+            <div class="agents_line"></div>
             <button class="about-btn">About Us</button>
         </div>
 
@@ -553,7 +713,8 @@
                 <div class="post-content">
                     <span class="post-date">April 19, 2021</span>
                     <h2>What Will Website Be Like In 100 Years?</h2>
-                    <p>Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin elit, ac tristique.</p>
+                    <p>Donec sed auctor orci. In a nisl vel nisi egestas efficitur nec ac neque. Sed vitae sollicitudin
+                        elit, ac tristique.</p>
                     <button class="read-more">Read More</button>
                 </div>
             </div>
@@ -566,7 +727,7 @@
                         <h4>14 Common Misconceptions About Web Design</h4>
                     </div>
                 </div>
-    
+
                 <div class="popular-post">
                     <img src="./img/post2.jpeg" alt="Post 2">
                     <div class="post-info">
@@ -574,7 +735,7 @@
                         <h4>5 Principles Of Effective Web Design</h4>
                     </div>
                 </div>
-    
+
                 <div class="popular-post">
                     <img src="./img/post3.jpeg" alt="Post 3">
                     <div class="post-info">
@@ -582,7 +743,7 @@
                         <h4>10 Web Design Blogs You Can't Miss</h4>
                     </div>
                 </div>
-    
+
                 <div class="popular-post">
                     <img src="./img/post4.jpeg" alt="Post 4">
                     <div class="post-info">
@@ -626,14 +787,13 @@
             },
 
             slidesPerView: 3,
-            spaceBetween: 160,
+            spaceBetween: 90,
             centeredSlides: true,
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        
-      // 大图swiper部分
+        // 大图swiper部分
         var swiper = new Swiper(".mySwipers", {
             pagination: {
                 el: ".swiper-pagination1",
@@ -694,6 +854,7 @@
         })
 
     </script>
+
 </body>
 
 </html>

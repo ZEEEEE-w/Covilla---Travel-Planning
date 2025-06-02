@@ -25,21 +25,21 @@ const menuBtn = document.querySelector('.menu-btn');
 const sideMenu = document.querySelector('.side-menu');
 
 
-menuBtn.addEventListener('click', function(event){
+menuBtn.addEventListener('click', function (event) {
     console.log('menu-btn');
-    
+
     event.stopPropagation();
-    if (getComputedStyle(sideMenu).display ==='none'){
+    if (getComputedStyle(sideMenu).display === 'none') {
         sideMenu.style.display = 'block';
     }
-    else{
+    else {
         sideMenu.style.display = 'none';
     }
 })
-sideMenu.addEventListener('click', function(event){
+sideMenu.addEventListener('click', function (event) {
     event.stopPropagation();
 })
-document.addEventListener('click', function(){
+document.addEventListener('click', function () {
     sideMenu.style.display = 'none';
 })
 
@@ -139,14 +139,14 @@ window.addEventListener('scroll', function () {
     // 3. 获取滚动的高度--整个文档的滚动后，进度条滚动的距离  document.documentElement.scrollTop等于window.scrollY
     const n = document.documentElement.scrollTop
     // console.log(n);
-    
+
     // 4.获取左侧进度条可移动的高度和页面文档的可移动的高度， 获取元素的高度offsetHeight
     const distance = progressBar1.offsetHeight - progressBar2.offsetHeight
 
     // 获取body除去窗口目前所占的高度（文档总高度-可以看到的文档高度）  
     const view = document.body.offsetHeight - window.innerHeight
     // console.log(view);
-    
+
 
     // 5. 左侧进度条 根据滚动距离来计算小滑块儿可以移动的
     // n / view： 计算滚动进度,  (n / view) * distance : 计算进度条滑块儿应该移动的高度
@@ -156,49 +156,50 @@ window.addEventListener('scroll', function () {
 })
 
 // Popular Vacation 
-const tabs = document.querySelectorAll('.tab');
-const indicator = document.querySelector('.indicator');
-const vacationData = [
-    {
-        images: ["./img/bah.jpeg", "./img/sah.jpeg", "./img/alx.jpeg"],
-        titles: ["Bahariya Oasis", "Sahl Hasheesh", "Alexandria"],
-        prices: ["$6400", "$7700", "$5300"]
-    },
-    {
-        images: ["./img/pal.jpeg", "./img/met.jpeg", "./img/the.jpeg"],
-        titles: ["Palaiokastritsa", "Meteora", "Thessaloniki"],
-        prices: ["$5600", "$2800", "$6700"]
-    },
-    {
-        images: ["./img/can.jpeg", "./img/kom.jpeg", "./img/pen.jpeg"],
-        titles: ["Canggu", "Komodo", "Penida Island"],
-        prices: ["$6500", "$7600", "$2800"]
-    },
-    {
-        images: ["./img/bon.jpeg", "./img/bri.jpeg", "./img/car.jpeg"],
-        titles: ["Bonifacio", "Brittany", "Carcassonne"],
-        prices: ["$1400", "$3600", "$3900"]
-    }
-];
+const bar2 = document.querySelector('.bar2');
+const lineBoxs = document.querySelectorAll('.lineBox');
+const contentBoxes = document.querySelectorAll('.contentBar');
 
-function selectTab(index) {
-    tabs.forEach((tab, i) => {
-        tab.classList.toggle('active', i === index);
+lineBoxs.forEach((box, index) => {
+    box.addEventListener('click', () => {
+        document.querySelectorAll('.line').forEach((el) => el.classList.remove('active'));
+        document.querySelectorAll('.line-son').forEach((el) => el.classList.remove('active'));
+        contentBoxes.forEach((el) => el.classList.remove('active'));
+
+        const currentLine = box.querySelector('.line');
+        const currentSon = box.querySelector('.line-son');
+
+        currentLine.classList.add('active');
+        currentSon.classList.add('active');
+
+        bar2.style.width = `${(index + 1) * 25}%`;
+        contentBoxes[index].classList.add('active');
     });
-
-    indicator.style.transform = `translateX(${index * 100}%)`;
-
-    document.querySelector('.pvImg1').src = vacationData[index].images[0];
-    document.querySelector('.pvImg2').src = vacationData[index].images[1];
-    document.querySelector('.pvImg3').src = vacationData[index].images[2];
-
-    document.querySelector('.pvTitle1').textContent = vacationData[index].titles[0];
-    document.querySelector('.pvTitle2').textContent = vacationData[index].titles[1];
-    document.querySelector('.pvTitle3').textContent = vacationData[index].titles[2];
-
-    document.querySelector('.pvPrice1').textContent = vacationData[index].prices[0];
-    document.querySelector('.pvPrice2').textContent = vacationData[index].prices[1];
-    document.querySelector('.pvPrice3').textContent = vacationData[index].prices[2];
-}
+});
 
 
+// video
+const videoIcon = document.getElementById('videoIcon')
+const videoIconCircle = document.getElementById('videoIconCircle')
+const circleOne = document.getElementById('circleOne')
+const circleTwo = document.getElementById('circleTwo')
+const circleThree = document.getElementById('circleThree')
+
+videoIcon.addEventListener('mouseover', function () {
+    circleOne.style.animation = 'videoPulse 2s infinite';
+    circleTwo.style.animation = 'videoPulse 2s infinite';
+    circleThree.style.transform = 'scale(1)'
+    circleThree.style.opacity = '1'
+    videoIcon.style.backgroundColor = '#fff'
+    videoIcon.style.border = '0'
+    videoIconCircle.style.backgroundColor = '#081c3a'
+})
+videoIcon.addEventListener('mouseout', function () {
+    circleOne.style.animation = false;
+    circleTwo.style.animation = false;
+    circleThree.style.opacity = '0'
+    videoIcon.style.backgroundColor = 'rgba(255, 255, 255,0)'
+    videoIcon.style.border = '1px dashed rgb(244, 244, 244,.3)'
+    videoIconCircle.style.backgroundColor = 'rgba(8, 28, 58,.1)'
+
+})
